@@ -98,8 +98,8 @@ for row in tqdm(stormList.iterrows()):
 
     if flux_dmsp is not None and mlt_dmsp is not None:
         dfEnergy = pd.DataFrame(flux_dmsp, columns=colss, index=time_dt_dmsp)
-        mlt_new = interpolate_cadence(mlt_dmsp, time_dt_dmsp)
-        mlat_new = interpolate_cadence(mlat_dmsp, time_dt_dmsp)
+        mlt_new = interpolate_cadence(mlt_dmsp, flux_dmsp)
+        mlat_new = interpolate_cadence(mlat_dmsp, flux_dmsp)
         dfEnergy["mlt"] = mlt_new
         dfEnergy["mlat"] = mlat_new
         stormDmspData.append(dfEnergy)
