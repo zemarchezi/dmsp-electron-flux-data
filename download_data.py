@@ -67,7 +67,7 @@ stormList.rename(columns={"Unnamed: 0": "stormNumber"}, inplace=True)
 # %%
 logs = open("log.txt", "a")
 stormDmspData = []
-probe = "f17"
+probe = "f15"
 for row in tqdm(stormList.iterrows()):
     
     initial_phase = pd.to_datetime(row[1].loc["new_begining_times"])
